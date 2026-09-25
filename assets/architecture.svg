@@ -1,13 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430">
-<rect width="1200" height="430" fill="white"/>
-<text x="50" y="55" font-family="Arial" font-size="29" font-weight="700">Technology Skill Renewal Pressure</text>
-<text x="50" y="88" font-family="Arial" font-size="16">Versioned O*NET research pipeline with source fingerprinting</text>
-<g font-family="Arial" text-anchor="middle">
-<rect x="40" y="145" width="190" height="135" rx="15" fill="#f5f5f5" stroke="#222"/><text x="135" y="185" font-size="16" font-weight="700">Pinned sources</text><text x="135" y="215" font-size="14">25.1 + 31.0</text>
-<rect x="280" y="145" width="190" height="135" rx="15" fill="#f5f5f5" stroke="#222"/><text x="375" y="185" font-size="16" font-weight="700">Normalize</text><text x="375" y="215" font-size="14">names + IDs</text>
-<rect x="520" y="145" width="190" height="135" rx="15" fill="#f5f5f5" stroke="#222"/><text x="615" y="185" font-size="16" font-weight="700">Compare</text><text x="615" y="215" font-size="14">all + common codes</text>
-<rect x="760" y="145" width="190" height="135" rx="15" fill="#f5f5f5" stroke="#222"/><text x="855" y="185" font-size="16" font-weight="700">Sensitivity</text><text x="855" y="215" font-size="14">category Jaccard</text>
-<rect x="1000" y="145" width="160" height="135" rx="15" fill="#f5f5f5" stroke="#222"/><text x="1080" y="185" font-size="16" font-weight="700">Interpret</text><text x="1080" y="215" font-size="14">bounded L&amp;D claim</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Technology skill renewal study architecture</title>
+<desc id="desc">Architecture of the empirical study from O*NET source snapshots through reproducible validation, longitudinal comparison, robustness analysis, and L&D interpretation.</desc>
+<defs>
+  <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#64748B"/></marker>
+</defs>
+<rect width="1200" height="675" fill="#F8FAFC"/>
+<rect width="1200" height="98" fill="#0F3D75"/>
+<text x="50" y="42" fill="#FFFFFF" font-family="IBM Plex Sans,Arial,sans-serif" font-size="29" font-weight="700">Technology Skill Renewal Pressure · Study Architecture</text>
+<text x="50" y="73" fill="#DBEAFE" font-family="IBM Plex Sans,Arial,sans-serif" font-size="15">Official versioned data, complete occupational evidence, sensitivity analysis, reproducible release</text>
+<g font-family="IBM Plex Sans,Arial,sans-serif">
+  <rect x="52" y="144" width="240" height="142" rx="16" fill="#DBEAFE" stroke="#60A5FA" stroke-width="2"/>
+  <text x="76" y="178" fill="#1D4ED8" font-size="14" font-weight="700">SOURCE LAYER</text>
+  <text x="76" y="209" fill="#0F172A" font-size="13" font-weight="700">O*NET 25.1 + 31.0</text>
+  <text x="76" y="234" fill="#475569" font-size="12">Skill files + Occupation Data</text>
+  <text x="76" y="258" fill="#475569" font-size="12">Pinned URLs, rows, SHA-256</text>
+
+  <rect x="344" y="144" width="240" height="142" rx="16" fill="#ECFDF5" stroke="#34D399" stroke-width="2"/>
+  <text x="368" y="178" fill="#047857" font-size="14" font-weight="700">VALIDATION LAYER</text>
+  <text x="368" y="209" fill="#334155" font-size="12">Schema-history checks</text>
+  <text x="368" y="234" fill="#334155" font-size="12">Title-stability checks</text>
+  <text x="368" y="258" fill="#334155" font-size="12">Exact source fingerprints</text>
+
+  <rect x="636" y="144" width="240" height="142" rx="16" fill="#F5F3FF" stroke="#A78BFA" stroke-width="2"/>
+  <text x="660" y="178" fill="#7E22CE" font-size="14" font-weight="700">ANALYSIS LAYER</text>
+  <text x="660" y="209" fill="#334155" font-size="12">All-release overlap</text>
+  <text x="660" y="234" fill="#334155" font-size="12">902 common occupations</text>
+  <text x="660" y="258" fill="#334155" font-size="12">Occupation distributions</text>
+
+  <rect x="928" y="144" width="220" height="142" rx="16" fill="#FFF7ED" stroke="#FB923C" stroke-width="2"/>
+  <text x="952" y="178" fill="#C2410C" font-size="14" font-weight="700">ROBUSTNESS LAYER</text>
+  <text x="952" y="209" fill="#334155" font-size="12">Category-name sensitivity</text>
+  <text x="952" y="234" fill="#334155" font-size="12">Exact-name vs category gap</text>
+  <text x="952" y="258" fill="#334155" font-size="12">Bounded interpretation</text>
+
+  <g stroke="#64748B" stroke-width="2.5" marker-end="url(#a)">
+    <line x1="292" y1="215" x2="334" y2="215"/>
+    <line x1="584" y1="215" x2="626" y2="215"/>
+    <line x1="876" y1="215" x2="918" y2="215"/>
+  </g>
+
+  <rect x="52" y="337" width="1096" height="194" rx="18" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="78" y="373" fill="#172033" font-size="18" font-weight="700">Release outputs stay synchronized</text>
+  <g>
+    <rect x="82" y="407" width="193" height="80" rx="12" fill="#EFF6FF"/><text x="179" y="438" text-anchor="middle" fill="#1D4ED8" font-size="13" font-weight="700">902-row evidence</text><text x="179" y="463" text-anchor="middle" fill="#475569" font-size="11">primary_results.csv</text>
+    <rect x="293" y="407" width="193" height="80" rx="12" fill="#F5F3FF"/><text x="390" y="438" text-anchor="middle" fill="#7E22CE" font-size="13" font-weight="700">Robustness table</text><text x="390" y="463" text-anchor="middle" fill="#475569" font-size="11">sensitivity diagnostics</text>
+    <rect x="504" y="407" width="193" height="80" rx="12" fill="#ECFDF5"/><text x="601" y="438" text-anchor="middle" fill="#047857" font-size="13" font-weight="700">Machine summary</text><text x="601" y="463" text-anchor="middle" fill="#475569" font-size="11">empirical_summary.json</text>
+    <rect x="715" y="407" width="193" height="80" rx="12" fill="#FFF7ED"/><text x="812" y="438" text-anchor="middle" fill="#C2410C" font-size="13" font-weight="700">Tests + CI</text><text x="812" y="463" text-anchor="middle" fill="#475569" font-size="11">3 Python versions</text>
+    <rect x="926" y="407" width="193" height="80" rx="12" fill="#FEF3C7"/><text x="1023" y="438" text-anchor="middle" fill="#92400E" font-size="13" font-weight="700">Zero-diff rebuild</text><text x="1023" y="463" text-anchor="middle" fill="#475569" font-size="11">source → output check</text>
+  </g>
+
+  <rect x="52" y="573" width="1096" height="54" rx="14" fill="#E0F2FE" stroke="#38BDF8"/>
+  <text x="76" y="606" fill="#075985" font-size="13" font-weight="700">Research use:</text>
+  <text x="173" y="606" fill="#0C4A6E" font-size="13">identify where software portfolios are relatively stable or renewal-heavy without overstating turnover as worker-level obsolescence.</text>
 </g>
-<g stroke="#222" stroke-width="2.5"><line x1="230" y1="212" x2="280" y2="212"/><line x1="470" y1="212" x2="520" y2="212"/><line x1="710" y1="212" x2="760" y2="212"/><line x1="950" y1="212" x2="1000" y2="212"/></g>
 </svg>
