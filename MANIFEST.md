@@ -1,6 +1,6 @@
 # Manifest
 
-Release files (excluding generated test caches):
+Release files (excluding generated caches):
 
 - `.github/workflows/ci.yml`
 - `.github/workflows/empirical-rebuild.yml`
@@ -16,12 +16,15 @@ Release files (excluding generated test caches):
 - `README.md`
 - `REPRODUCIBILITY.md`
 - `RESEARCH_BUNDLE.md`
+- `THIRD_PARTY_DATA.md`
 - `assets/architecture.svg`
 - `assets/evaluation.svg`
 - `assets/method.svg`
 - `assets/research_design.svg`
 - `data/README.md`
 - `data/derived/primary_results.csv`
+- `data/derived/secondary_results.csv`
+- `data/derived/robustness_results.csv`
 - `data/source_manifest.json`
 - `docs/analysis_plan.md`
 - `docs/data_dictionary.md`

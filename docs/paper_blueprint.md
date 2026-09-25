@@ -1,25 +1,45 @@
 # Paper Blueprint
 
 ## Working title
-Technology Skill Renewal Pressure: O*NET 2020–2026
+Technology Skill Renewal Pressure: Longitudinal Evidence from O*NET Software-Skill Portfolios, 2020–2026
 
 ## Motivation
-Workforce-planning systems need to distinguish durable technology requirements from portfolios that are changing quickly. Versioned O*NET releases allow the same occupation codes to be compared over time without treating a proprietary job-posting sample as ground truth.
+L&D and workforce-planning systems need to distinguish durable technology requirements from occupation portfolios that change rapidly. Versioned O*NET releases offer a reproducible public source for studying this turnover without treating a proprietary job-posting sample as ground truth.
 
 ## Research question
-How much do occupation–technology portfolios persist or turn over between O*NET 25.1 (2020) and O*NET 31.0 (2026)?
+How much do occupation–software-skill portfolios persist or turn over between O*NET 25.1 and O*NET 31.0, and how heterogeneous is that renewal pressure across occupations?
 
-## Data and method
-Normalize technology/software example strings, form unique occupation–technology pairs for each release, restrict occupation-level comparisons to codes appearing in both releases, and calculate global and occupation-level Jaccard similarity. Preserve the official Hot Technology and In Demand indicators as descriptive attributes rather than causal signals.
+## Data
+- O*NET 25.1 Technology Skills, November 2020;
+- O*NET 31.0 Software Skills snapshot, August 2026;
+- matching 25.1 and 31.0 Occupation Data.
 
-## Results to report
-Across 902 occupation codes appearing in both releases, the global occupation–technology-pair Jaccard similarity is 0.685 and the median occupation-level Jaccard is 0.6875. The low-similarity tail demonstrates strong heterogeneity in portfolio renewal pressure. Report the packaged headline metrics and the full relevant derived table; do not cherry-pick only the strongest contrast.
+O*NET records release 30.3 as the most recent Software Skills content update and documents the Technology Skills → Software Skills rename.
 
-## Robustness / sensitivity
-The release reports both global pair-set Jaccard similarity and the distribution of occupation-level Jaccard values over the 902 common occupation codes. Exact duplicate occupation–technology pairs are collapsed after deterministic text normalization. Because O*NET changed file naming and taxonomy conventions over time, more aggressive alias matching would be a separate sensitivity analysis and could change the measured churn.
+## Methods
+1. normalize exact software example strings;
+2. deduplicate code–software pairs;
+3. distinguish all-release from 902-common-code Jaccard;
+4. report the complete occupation-level Jaccard distribution;
+5. validate common-code title stability;
+6. repeat overlap analysis on normalized Commodity Title / Element Name categories.
 
-## Limitations
-Database change combines labor-market change, taxonomy maintenance, data-collection updates, software/vendor naming changes, and measurement revisions. Pair churn is therefore a renewal-pressure indicator, not a pure rate of human skill depreciation.
+## Main results
+- all-release pair Jaccard: **0.6890**;
+- common-code pair Jaccard: **0.7016**;
+- occupation median: **0.6923**;
+- Q10–Q90: **0.4286–0.8517**;
+- 13.97% of common occupations below 0.50;
+- 36.03% at or above 0.75;
+- category-name common-code Jaccard: **0.8169**;
+- median occupation category Jaccard: **0.8481**;
+- zero title changes among the 902 common codes.
+
+## Interpretation
+The gap between exact-name and category-level persistence is substantively important: part of apparent software renewal is within broader categories that remain stable. That supports a layered workforce-planning interpretation rather than a simple “skills became obsolete” narrative.
+
+## Robustness and limitations
+Report all 902 occupations, not only the low-similarity tail. Preserve the distinction between database turnover and human skill depreciation. Discuss vendor naming, source maintenance, content-update timing, taxonomy/classification maintenance, and the absence of worker-level outcome data.
 
 ## Publication integrity
-Do not describe this repository as peer reviewed, preregistered, or externally validated unless those events actually occur. Distinguish analysis of public data from original data collection.
+Do not claim preregistration, peer review, causal identification, or external validation unless those events occur.

@@ -1,20 +1,32 @@
 # Research Design
 
-## Research question
-How much do occupation–technology portfolios persist or turn over between O*NET 25.1 (2020) and O*NET 31.0 (2026)?
+## Question
+How much do occupation–software-skill portfolios persist or turn over between O*NET 25.1 and O*NET 31.0, and how heterogeneous is that renewal pressure across occupations?
 
 ## Design
-Longitudinal secondary analysis of two versioned O*NET database releases.
+Longitudinal secondary analysis of versioned O*NET software-skill portfolios.
 
-## Source and unit of analysis
-Source: O*NET 25.1 Technology Skills and O*NET 31.0 Software Skills. The operational unit follows the public dataset and is documented in `data/source_manifest.json` and `docs/data_dictionary.md`.
+## Longitudinal linkage
+O*NET documents the Technology Skills → Software Skills rename and related field renames. The study therefore treats the files as versioned stages of the same O*NET data domain, with explicit measurement-change caveats.
 
-## Hypotheses
-1. H1: occupation-level technology portfolios exhibit substantial persistence but not complete stability.
-2. H2: renewal pressure is heterogeneous across occupations rather than captured by a single portfolio-wide churn rate.
+## Samples
+- all-release pair analysis: every unique normalized code–software pair in each snapshot;
+- common-code longitudinal analysis: 902 occupations represented in both skill files.
 
-## Method
-Normalize technology/software example strings, form unique occupation–technology pairs for each release, restrict occupation-level comparisons to codes appearing in both releases, and calculate global and occupation-level Jaccard similarity. Preserve the official Hot Technology and In Demand indicators as descriptive attributes rather than causal signals.
+Matching Occupation Data files are used to validate code/title semantics; no normalized title changes are observed among the 902 common codes.
 
-## Validity boundary
-Database change combines labor-market change, taxonomy maintenance, data-collection updates, software/vendor naming changes, and measurement revisions. Pair churn is therefore a renewal-pressure indicator, not a pure rate of human skill depreciation.
+## Outcomes
+Primary:
+- exact normalized software-name Jaccard.
+
+Secondary:
+- occupation-level distribution of exact-name Jaccard.
+
+Sensitivity:
+- normalized Commodity Title / Element Name category Jaccard.
+
+## Heterogeneity
+The complete 902-row table is retained. Distributional summaries and threshold shares are reported instead of inferring heterogeneity from the ten most extreme cases.
+
+## Validity
+The design is descriptive. Database turnover may reflect labor-market change, naming changes, classification/taxonomy maintenance, and source methodology updates. Results are useful as workforce-renewal signals, not as causal estimates of skill depreciation.
