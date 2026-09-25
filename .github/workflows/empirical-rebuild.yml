@@ -1,12 +1,17 @@
 name: Empirical rebuild
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
       - "scripts/fetch_and_analyze.py"
       - "research/**"
+      - "tests/**"
       - "data/source_manifest.json"
+      - "data/derived/**"
+      - "results/empirical_summary.json"
+      - "assets/**"
       - ".github/workflows/empirical-rebuild.yml"
 
 concurrency:
@@ -14,33 +19,22 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  bootstrap-release:
+  verify-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
-      - name: Accept and fingerprint current official O*NET sources
-        run: python scripts/fetch_and_analyze.py --write --refresh-fingerprints
-      - name: Run tests
+      - name: Rebuild from pinned O*NET sources
+        run: python scripts/fetch_and_analyze.py --write
+      - name: Run release tests
         run: pytest -q
-      - name: Commit generated release evidence
+      - name: Require zero source-to-output diff
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/source_manifest.json data/derived results/empirical_summary.json assets
-          if git diff --cached --quiet; then
-            echo "No generated changes"
-            exit 0
-          fi
-          git commit -m "Regenerate pinned O*NET empirical evidence"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git diff --exit-code --             data/source_manifest.json             data/derived/primary_results.csv             data/derived/secondary_results.csv             data/derived/robustness_results.csv             results/empirical_summary.json             assets/architecture.svg             assets/method.svg             assets/evaluation.svg             assets/research_design.svg
