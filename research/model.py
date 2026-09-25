@@ -15,6 +15,33 @@ EXPECTED_SOURCE_ROWS = {
     "onet_25_1_occupation_data": 1016,
     "onet_31_0_occupation_data": 1016,
 }
+EXPECTED_SOURCE_SHA256 = {
+    "onet_25_1_technology_skills": "19de2a84a52a77841f9879fd026ece1a0dc2bc5611ea306e015b74ef22d00ddc",
+    "onet_31_0_software_skills": "6aabb96b464288db849580e6510530efff3f80e25dde2bb23f1fc36bb526b016",
+    "onet_25_1_occupation_data": "63e6029d3d30ff5c7cf39b5304a733b77a409e01c65ae7095fe92f6d18d74a66",
+    "onet_31_0_occupation_data": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+}
+EXPECTED_HEADLINE = {
+    "rows_2020": 29012,
+    "rows_2026": 31821,
+    "common_occupation_codes": 902,
+    "all_pairs_2020": 28929,
+    "all_pairs_2026": 31706,
+    "all_persisted_pairs": 24736,
+    "all_release_global_jaccard": 0.6890,
+    "common_pairs_2020": 28929,
+    "common_pairs_2026": 31065,
+    "common_persisted_pairs": 24736,
+    "common_code_global_jaccard": 0.7016,
+    "occupation_jaccard_mean": 0.6685,
+    "occupation_jaccard_median": 0.6923,
+    "hot_unique_pairs_2020": 12636,
+    "hot_unique_pairs_2026": 11456,
+    "in_demand_unique_pairs_2026": 2404,
+    "duplicate_pair_rows_2020": 83,
+    "duplicate_pair_rows_2026": 115,
+    "title_changed_common_codes": 0,
+}
 
 
 def normalize_technology(value: str) -> str:
@@ -123,14 +150,30 @@ def validate_bundle():
             return False
         if not re.fullmatch(r"[0-9a-f]{64}", str(item.get("sha256", ""))):
             return False
+        if item.get("sha256") != EXPECTED_SOURCE_SHA256[key]:
+            return False
 
     if manifest.get("raw_data_redistributed") is not False:
         return False
+
+    for key, expected in EXPECTED_HEADLINE.items():
+        actual = metrics.get(key)
+        if isinstance(expected, float):
+            if actual is None or abs(float(actual) - expected) > 5e-5:
+                return False
+        elif actual != expected:
+            return False
 
     jaccards = [float(r["jaccard"]) for r in primary]
     if not all(0.0 <= x <= 1.0 for x in jaccards):
         return False
     if [float(r["jaccard"]) for r in secondary] != sorted(float(r["jaccard"]) for r in secondary):
+        return False
+    expected_low = sorted(
+        primary,
+        key=lambda r: (float(r["jaccard"]), r["occupation_code"]),
+    )[:10]
+    if [r["occupation_code"] for r in secondary] != [r["occupation_code"] for r in expected_low]:
         return False
 
     calc = occupation_distribution(primary)
@@ -163,6 +206,10 @@ def validate_bundle():
         return False
 
     category_vals = [float(r["category_jaccard"]) for r in primary]
+    if not all(0.0 <= x <= 1.0 for x in category_vals):
+        return False
+    if float(sensitivity["common_category_global_jaccard"]) <= 0.0:
+        return False
     if abs(statistics.median(category_vals) - float(sensitivity["occupation_category_jaccard_median"])) > 5e-5:
         return False
 
