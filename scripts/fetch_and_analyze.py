@@ -138,7 +138,7 @@ def fetch_sources(manifest, refresh_fingerprints=False):
 
 def build_pair_maps(rows, *, old=False):
     tech_field = "Example" if old else "Workplace Example"
-    category_field = "Commodity Code" if old else "Element ID"
+    category_field = "Commodity Title" if old else "Element Name"
     code_field = "O*NET-SOC Code"
 
     pairs_by_code = defaultdict(set)
@@ -159,7 +159,7 @@ def build_pair_maps(rows, *, old=False):
         if not old and str(row.get("In Demand", "")).strip().upper() == "Y":
             demand_by_code[code].add(tech)
 
-        category = normalize_category_id(row.get(category_field, ""))
+        category = normalize_technology(row.get(category_field, ""))
         if category:
             categories_by_code[code].add(category)
 
@@ -313,7 +313,7 @@ def analyze(sources):
         },
         "occupation_jaccard_distribution": occ_dist,
         "sensitivity_analysis": {
-            "measure": "O*NET category/Element-ID overlap within the same 902 occupations",
+            "measure": "Normalized O*NET category-name overlap: Commodity Title (25.1) versus Element Name (31.0) within the same 902 occupations",
             "common_category_pairs_2020": len(common_old_categories),
             "common_category_pairs_2026": len(common_new_categories),
             "common_category_persisted": common_category_comp["persisted_pairs"],
@@ -393,7 +393,7 @@ def write_figures(summary):
 <text x="70" y="215" font-size="20" font-weight="700">2. Common-code longitudinal comparison</text>
 <text x="90" y="245" font-size="16">{metrics["common_occupation_codes"]} occupations present in both skill files; full occupation-level distributions are reported.</text>
 <text x="70" y="305" font-size="20" font-weight="700">3. Category sensitivity</text>
-<text x="90" y="335" font-size="16">Repeat overlap analysis on O*NET Commodity Code / Element ID categories to reduce vendor-name sensitivity.</text>
+<text x="90" y="335" font-size="16">Repeat overlap analysis on normalized O*NET Commodity Title / Element Name categories to reduce vendor-name sensitivity.</text>
 <text x="70" y="395" font-size="20" font-weight="700">4. Interpretation</text>
 <text x="90" y="425" font-size="16">Treat observed change as database-based renewal pressure, not a causal rate of human skill depreciation.</text>
 <text x="90" y="465" font-size="14">O*NET renamed Technology Skills to Software Skills in release 30.3; the longitudinal relation is documented by O*NET.</text>
