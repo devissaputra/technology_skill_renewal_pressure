@@ -1,15 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="550" viewBox="0 0 1200 550">
-<rect width="1200" height="550" fill="white"/>
-<text x="50" y="55" font-family="Arial" font-size="29" font-weight="700">Technology Skill Renewal Pressure — Method</text>
-<g font-family="Arial">
-<text x="70" y="125" font-size="20" font-weight="700">1. All-release pair comparison</text>
-<text x="90" y="155" font-size="16">All unique occupation–software pairs in each snapshot; not restricted to common occupation codes.</text>
-<text x="70" y="215" font-size="20" font-weight="700">2. Common-code longitudinal comparison</text>
-<text x="90" y="245" font-size="16">902 occupations present in both skill files; full occupation-level distributions are reported.</text>
-<text x="70" y="305" font-size="20" font-weight="700">3. Category sensitivity</text>
-<text x="90" y="335" font-size="16">Repeat overlap analysis on normalized O*NET Commodity Title / Element Name categories to reduce vendor-name sensitivity.</text>
-<text x="70" y="395" font-size="20" font-weight="700">4. Interpretation</text>
-<text x="90" y="425" font-size="16">Treat observed change as database-based renewal pressure, not a causal rate of human skill depreciation.</text>
-<text x="90" y="465" font-size="14">O*NET renamed Technology Skills to Software Skills in release 30.3; the longitudinal relation is documented by O*NET.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">O*NET technology skill renewal analysis pipeline</title>
+<desc id="desc">Scientific workflow from versioned O*NET source files through fingerprint verification, normalization, common occupation matching, Jaccard analyses, category sensitivity, and bounded L&D interpretation.</desc>
+<defs>
+  <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L8,4 L0,8 z" fill="#64748B"/>
+  </marker>
+</defs>
+<rect width="1200" height="675" fill="#F8FAFC"/>
+<rect width="1200" height="98" fill="#312E81"/>
+<text x="50" y="42" fill="#FFFFFF" font-family="IBM Plex Sans,Arial,sans-serif" font-size="29" font-weight="700">From O*NET Releases to L&amp;D Evidence</text>
+<text x="50" y="73" fill="#E0E7FF" font-family="IBM Plex Sans,Arial,sans-serif" font-size="15">Versioned sources → verified pairs → longitudinal overlap → sensitivity → bounded interpretation</text>
+
+<g font-family="IBM Plex Sans,Arial,sans-serif">
+  <rect x="44" y="130" width="230" height="138" rx="16" fill="#DBEAFE" stroke="#60A5FA" stroke-width="2"/>
+  <text x="66" y="163" fill="#1D4ED8" font-size="14" font-weight="700">1 · VERSIONED SOURCES</text>
+  <text x="66" y="195" fill="#0F172A" font-size="13" font-weight="700">O*NET 25.1 · Nov 2020</text>
+  <text x="66" y="218" fill="#475569" font-size="12">29,012 Technology Skills rows</text>
+  <text x="66" y="242" fill="#0F172A" font-size="13" font-weight="700">O*NET 31.0 · Aug 2026</text>
+  <text x="66" y="265" fill="#475569" font-size="12">31,821 Software Skills rows</text>
+
+  <rect x="326" y="130" width="230" height="138" rx="16" fill="#ECFDF5" stroke="#34D399" stroke-width="2"/>
+  <text x="348" y="163" fill="#047857" font-size="14" font-weight="700">2 · SOURCE INTEGRITY</text>
+  <text x="348" y="196" fill="#334155" font-size="12">SHA-256 + row-count checks</text>
+  <text x="348" y="220" fill="#334155" font-size="12">Schema rename documented</text>
+  <text x="348" y="244" fill="#334155" font-size="12">Occupation titles cross-checked</text>
+  <text x="348" y="265" fill="#047857" font-size="12" font-weight="700">0 title changes among 902 codes</text>
+
+  <rect x="608" y="130" width="230" height="138" rx="16" fill="#FFF7ED" stroke="#FB923C" stroke-width="2"/>
+  <text x="630" y="163" fill="#C2410C" font-size="14" font-weight="700">3 · NORMALIZE PAIRS</text>
+  <text x="630" y="196" fill="#334155" font-size="12">Lowercase + punctuation cleanup</text>
+  <text x="630" y="220" fill="#334155" font-size="12">Collapse duplicate code × software</text>
+  <text x="630" y="244" fill="#334155" font-size="12">83 duplicate rows · 2020</text>
+  <text x="630" y="265" fill="#334155" font-size="12">115 duplicate rows · 2026</text>
+
+  <rect x="890" y="130" width="266" height="138" rx="16" fill="#F3E8FF" stroke="#A78BFA" stroke-width="2"/>
+  <text x="912" y="163" fill="#7E22CE" font-size="14" font-weight="700">4 · DEFINE COMPARISON</text>
+  <text x="912" y="196" fill="#334155" font-size="12">All-release pair overlap</text>
+  <text x="912" y="220" fill="#334155" font-size="12">Common-code pair overlap</text>
+  <text x="912" y="244" fill="#334155" font-size="12">902 occupations in both skill files</text>
+  <text x="912" y="265" fill="#7E22CE" font-size="12" font-weight="700">No imputation of missing pairs</text>
+
+  <g stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)">
+    <line x1="274" y1="199" x2="316" y2="199"/>
+    <line x1="556" y1="199" x2="598" y2="199"/>
+    <line x1="838" y1="199" x2="880" y2="199"/>
+  </g>
+
+  <rect x="44" y="319" width="1112" height="232" rx="18" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="70" y="354" fill="#172033" font-size="17" font-weight="700">5 · Run three linked analyses</text>
+
+  <rect x="74" y="382" width="310" height="132" rx="14" fill="#EFF6FF" stroke="#93C5FD"/>
+  <text x="96" y="414" fill="#1D4ED8" font-size="14" font-weight="700">A. All-release pair overlap</text>
+  <text x="96" y="441" fill="#475569" font-size="12">Every unique pair in each release</text>
+  <text x="96" y="470" fill="#0F172A" font-size="26" font-weight="700">J = 0.6890</text>
+  <text x="96" y="495" fill="#64748B" font-size="11">Not labeled as “across 902 occupations”</text>
+
+  <rect x="445" y="382" width="310" height="132" rx="14" fill="#F5F3FF" stroke="#C4B5FD"/>
+  <text x="467" y="414" fill="#7E22CE" font-size="14" font-weight="700">B. Common-code longitudinal</text>
+  <text x="467" y="441" fill="#475569" font-size="12">Pair overlap + 902 occupation distributions</text>
+  <text x="467" y="470" fill="#0F172A" font-size="26" font-weight="700">J = 0.7016</text>
+  <text x="467" y="495" fill="#64748B" font-size="11">Median occupation Jaccard = 0.6923</text>
+
+  <rect x="816" y="382" width="310" height="132" rx="14" fill="#ECFDF5" stroke="#6EE7B7"/>
+  <text x="838" y="414" fill="#047857" font-size="14" font-weight="700">C. Category sensitivity</text>
+  <text x="838" y="441" fill="#475569" font-size="12">Commodity Title → Element Name</text>
+  <text x="838" y="470" fill="#0F172A" font-size="26" font-weight="700">J = 0.8169</text>
+  <text x="838" y="495" fill="#64748B" font-size="11">Tests sensitivity to exact software names</text>
+
+  <rect x="44" y="588" width="1112" height="54" rx="14" fill="#FEF3C7" stroke="#F59E0B"/>
+  <text x="66" y="621" fill="#92400E" font-size="13" font-weight="700">6 · L&amp;D interpretation:</text>
+  <text x="230" y="621" fill="#78350F" font-size="13">use turnover as a renewal-pressure signal for workforce planning, not as proof that workers' skills “expired.”</text>
 </g>
 </svg>
