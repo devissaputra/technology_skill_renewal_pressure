@@ -1,0 +1,11 @@
+metric,value
+occupation_jaccard_q10,0.4286
+occupation_jaccard_q25,0.5769
+occupation_jaccard_q75,0.7826
+occupation_jaccard_q90,0.8517
+occupation_jaccard_stddev,0.1665
+share_occupations_jaccard_below_025,0.0133
+share_occupations_jaccard_below_050,0.1397
+share_occupations_jaccard_at_least_075,0.3603
+common_category_global_jaccard,0.8169
+occupation_category_jaccard_median,0.8481

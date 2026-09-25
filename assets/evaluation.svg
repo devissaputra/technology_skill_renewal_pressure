@@ -1,1 +1,16 @@
-<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540"><ns0:rect width="100%" height="100%" fill="white" /><ns0:text x="50" y="55" font-family="Arial" font-size="29" font-weight="700">Technology Skill Renewal Pressure — Evidence Boundary</ns0:text><ns0:rect x="55" y="95" width="1090" height="170" rx="18" fill="#f6f6f6" stroke="#333" /><ns0:text x="85" y="133" font-family="Arial" font-size="20" font-weight="700">Empirical finding</ns0:text><ns0:text x="85" y="167" font-family="Arial" font-size="16">Across 902 occupation codes appearing in both releases, the global occupation–technology-pair Jaccard similarity</ns0:text><ns0:text x="85" y="191" font-family="Arial" font-size="16">is 0.685 and the median occupation-level Jaccard is 0.6875. The low-similarity tail demonstrates strong</ns0:text><ns0:text x="85" y="215" font-family="Arial" font-size="16">heterogeneity in portfolio renewal pressure.</ns0:text><ns0:rect x="55" y="300" width="1090" height="170" rx="18" fill="#f6f6f6" stroke="#333" /><ns0:text x="85" y="338" font-family="Arial" font-size="20" font-weight="700">Claim boundary</ns0:text><ns0:text x="85" y="372" font-family="Arial" font-size="16">Database change combines labor-market change, taxonomy maintenance, data-collection updates, software/vendor</ns0:text><ns0:text x="85" y="396" font-family="Arial" font-size="16">naming changes, and measurement revisions. Pair churn is therefore a renewal-pressure indicator, not a pure rate</ns0:text><ns0:text x="85" y="420" font-family="Arial" font-size="16">of human skill depreciation.</ns0:text></ns0:svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570">
+<rect width="1200" height="570" fill="white"/>
+<text x="50" y="55" font-family="Arial" font-size="29" font-weight="700">Technology Skill Renewal Pressure — Evidence Boundary</text>
+<g font-family="Arial">
+<rect x="55" y="95" width="1090" height="215" rx="18" fill="#f6f6f6" stroke="#333"/>
+<text x="85" y="135" font-size="20" font-weight="700">Empirical evidence</text>
+<text x="85" y="170" font-size="16">All-release pair Jaccard: 0.6890.</text>
+<text x="85" y="198" font-size="16">Common-code pair Jaccard across 902 occupations: 0.7016.</text>
+<text x="85" y="226" font-size="16">Median occupation Jaccard: 0.6923; Q10–Q90: 0.4286–0.8517.</text>
+<text x="85" y="254" font-size="16">Category-level common-code Jaccard sensitivity: 0.8169.</text>
+<rect x="55" y="345" width="1090" height="150" rx="18" fill="#f6f6f6" stroke="#333"/>
+<text x="85" y="385" font-size="20" font-weight="700">Claim boundary</text>
+<text x="85" y="420" font-size="16">Observed turnover mixes real labor-market change with taxonomy maintenance, source updates, and naming changes.</text>
+<text x="85" y="450" font-size="16">It is a renewal-pressure indicator for workforce planning, not a pure measure of human skill depreciation.</text>
+</g>
+</svg>
