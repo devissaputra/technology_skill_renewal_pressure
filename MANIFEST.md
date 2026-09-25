@@ -1,0 +1,40 @@
+# Manifest
+
+Release files (excluding generated test caches):
+
+- `.github/workflows/ci.yml`
+- `.github/workflows/empirical-rebuild.yml`
+- `.gitignore`
+- `CITATION.cff`
+- `CONTRIBUTING.md`
+- `EMPIRICAL_STUDY.md`
+- `GITHUB_METADATA.md`
+- `LICENSE`
+- `Makefile`
+- `PORTFOLIO_TRACK.md`
+- `QA_REPORT.md`
+- `README.md`
+- `REPRODUCIBILITY.md`
+- `RESEARCH_BUNDLE.md`
+- `assets/architecture.svg`
+- `assets/evaluation.svg`
+- `assets/method.svg`
+- `assets/research_design.svg`
+- `data/README.md`
+- `data/derived/primary_results.csv`
+- `data/source_manifest.json`
+- `docs/analysis_plan.md`
+- `docs/data_dictionary.md`
+- `docs/originality_map.md`
+- `docs/paper_blueprint.md`
+- `docs/references.md`
+- `docs/research_design.md`
+- `pyproject.toml`
+- `requirements.txt`
+- `research/__init__.py`
+- `research/model.py`
+- `results/README.md`
+- `results/empirical_summary.json`
+- `run_demo.py`
+- `scripts/fetch_and_analyze.py`
+- `tests/test_model.py`

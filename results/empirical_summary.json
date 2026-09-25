@@ -1,0 +1,20 @@
+{
+  "study": "Technology Skill Renewal Pressure: O*NET 2020\u20132026",
+  "headline_metrics": {
+    "rows_2020": 29012,
+    "rows_2026": 31821,
+    "common_occupation_codes": 902,
+    "pairs_2020": 28929,
+    "pairs_2026": 31706,
+    "persisted_pairs": 24649,
+    "global_jaccard": 0.685,
+    "occupation_jaccard_mean": 0.6641,
+    "occupation_jaccard_median": 0.6875,
+    "hot_pairs_2020": 12664,
+    "hot_pairs_2026": 11204,
+    "in_demand_pairs_2026": 2316
+  },
+  "finding": "Across 902 occupation codes appearing in both releases, the global code\u2013technology-pair Jaccard similarity is 0.685; median occupation-level Jaccard is 0.6875. This indicates meaningful portfolio turnover rather than either complete stability or wholesale replacement.",
+  "source": "O*NET 25.1 and O*NET 31.0 Technology/Software Skills",
+  "retrieved": "2026-09-25"
+}

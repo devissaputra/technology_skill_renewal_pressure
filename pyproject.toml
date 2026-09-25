@@ -1,0 +1,10 @@
+[project]
+name = "technology-skill-renewal-pressure"
+version = "1.0.0"
+description = "Empirical occupational technology-skill renewal study comparing O*NET releases 25.1 and 31.0."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

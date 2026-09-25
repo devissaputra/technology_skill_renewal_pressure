@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this empirical research bundle, cite this repository and the primary dataset/source documented in docs/references.md."
+title: "Technology Skill Renewal Pressure: O*NET 2020–2026"
+type: software
+authors:
+  - family-names: Saputra
+    given-names: Devis W.
+date-released: 2026-09-25
+license: MIT
+repository-code: "https://github.com/devissaputra/technology_skill_renewal_pressure"
+keywords:
+  - learning-development
+  - workforce-skills
+  - onet
+  - skill-taxonomy
+  - longitudinal-analysis
+  - empirical-study
+  - reproducible-research
