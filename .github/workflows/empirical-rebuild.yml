@@ -9,6 +9,10 @@ on:
       - "data/source_manifest.json"
       - ".github/workflows/empirical-rebuild.yml"
 
+concurrency:
+  group: empirical-rebuild-main
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -17,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -33,7 +39,8 @@ jobs:
           git add data/source_manifest.json data/derived results/empirical_summary.json assets
           if git diff --cached --quiet; then
             echo "No generated changes"
-          else
-            git commit -m "Regenerate pinned O*NET empirical evidence"
-            git push
+            exit 0
           fi
+          git commit -m "Regenerate pinned O*NET empirical evidence"
+          git pull --rebase origin main
+          git push origin HEAD:main
