@@ -327,7 +327,7 @@ def analyze(sources):
             "restricted to the 902 occupations represented in both files. Occupation-level "
             "heterogeneity is evaluated only within those 902 common codes. A category-level "
             "sensitivity analysis tests whether the renewal signal persists when software names "
-            "are collapsed to O*NET category/Element IDs."
+            "are collapsed to normalized O*NET category names."
         ),
         "source": "O*NET Database 25.1 and 31.0, Technology Skills / Software Skills",
         "retrieved": "2026-09-25",
