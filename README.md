@@ -3,11 +3,25 @@
 [![CI](https://github.com/devissaputra/technology_skill_renewal_pressure/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/technology_skill_renewal_pressure/actions/workflows/ci.yml)
 [![Empirical rebuild](https://github.com/devissaputra/technology_skill_renewal_pressure/actions/workflows/empirical-rebuild.yml/badge.svg)](https://github.com/devissaputra/technology_skill_renewal_pressure/actions/workflows/empirical-rebuild.yml)
 
-> **Empirical Research Bundle** · **Learning & Development Research** · Workforce Skills / Software-Skill Renewal / Occupational Intelligence
+> **Empirical Study** · **Learning & Development Research** · Workforce Skills / Software-Skill Renewal / Occupational Intelligence
 
-Longitudinal secondary analysis of versioned O*NET software-skill portfolios, comparing O*NET 25.1 (November 2020) with the O*NET 31.0 database snapshot (August 2026).
+Technology requirements do not refresh at the same pace in every occupation. This study uses two official, versioned O*NET snapshots to ask a practical L&D question: **how much of an occupation's software-skill portfolio persists, and where does the evidence suggest stronger renewal pressure?**
 
-![Empirical workflow](assets/architecture.svg)
+The analysis compares O*NET 25.1 (November 2020) with the O*NET 31.0 database snapshot (August 2026), validates the longitudinal schema relationship, matches occupation titles, and then separates exact software-name turnover from broader category-level change. That distinction matters because a renamed product or vendor-specific tool should not automatically be interpreted as human skill obsolescence.
+
+### At a glance
+
+| Evidence | Result |
+|---|---:|
+| Common occupations compared | **902** |
+| Common-code pair Jaccard | **0.7016** |
+| Median occupation Jaccard | **0.6923** |
+| Occupations below 0.50 Jaccard | **13.97%** |
+| Occupations at or above 0.75 | **36.03%** |
+| Category-level common-code Jaccard | **0.8169** |
+| Matched occupation titles changed | **0** |
+
+![Study architecture](assets/architecture.svg)
 
 ## Research question
 
@@ -109,6 +123,10 @@ After pair deduplication:
 - In Demand unique pairs, 2026: **2,404**
 
 The In Demand field is not used as a longitudinal 2020–2026 outcome because O*NET added that field after the 25.1 release.
+
+## L&D interpretation
+
+For workforce planning, the useful signal is **relative renewal pressure**: some occupational software portfolios remain comparatively stable while others change more substantially. The category sensitivity result is especially important for curriculum and reskilling decisions because it shows that exact product-name turnover can occur even when broader capability categories remain more persistent.
 
 ## What this study can claim
 
