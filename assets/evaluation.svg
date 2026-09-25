@@ -1,16 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570">
-<rect width="1200" height="570" fill="white"/>
-<text x="50" y="55" font-family="Arial" font-size="29" font-weight="700">Technology Skill Renewal Pressure — Evidence Boundary</text>
-<g font-family="Arial">
-<rect x="55" y="95" width="1090" height="215" rx="18" fill="#f6f6f6" stroke="#333"/>
-<text x="85" y="135" font-size="20" font-weight="700">Empirical evidence</text>
-<text x="85" y="170" font-size="16">All-release pair Jaccard: 0.6890.</text>
-<text x="85" y="198" font-size="16">Common-code pair Jaccard across 902 occupations: 0.7016.</text>
-<text x="85" y="226" font-size="16">Median occupation Jaccard: 0.6923; Q10–Q90: 0.4286–0.8517.</text>
-<text x="85" y="254" font-size="16">Category-level common-code Jaccard sensitivity: 0.8169.</text>
-<rect x="55" y="345" width="1090" height="150" rx="18" fill="#f6f6f6" stroke="#333"/>
-<text x="85" y="385" font-size="20" font-weight="700">Claim boundary</text>
-<text x="85" y="420" font-size="16">Observed turnover mixes real labor-market change with taxonomy maintenance, source updates, and naming changes.</text>
-<text x="85" y="450" font-size="16">It is a renewal-pressure indicator for workforce planning, not a pure measure of human skill depreciation.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Evidence and claim boundary for the technology skill renewal study</title>
+<desc id="desc">Visual separates observed O*NET database evidence, defensible L&D interpretation, and claims the study does not make.</desc>
+<rect width="1200" height="675" fill="#F8FAFC"/>
+<rect width="1200" height="98" fill="#134E4A"/>
+<text x="50" y="42" fill="#FFFFFF" font-family="IBM Plex Sans,Arial,sans-serif" font-size="29" font-weight="700">Evidence Boundary: What the Study Shows — and What It Does Not</text>
+<text x="50" y="73" fill="#CCFBF1" font-family="IBM Plex Sans,Arial,sans-serif" font-size="15">Separating measured database turnover from workforce-planning interpretation</text>
+<g font-family="IBM Plex Sans,Arial,sans-serif">
+  <rect x="50" y="135" width="1100" height="174" rx="18" fill="#ECFDF5" stroke="#34D399" stroke-width="2"/>
+  <text x="78" y="171" fill="#047857" font-size="18" font-weight="700">OBSERVED EVIDENCE</text>
+  <text x="78" y="206" fill="#0F172A" font-size="14">Common-code pair Jaccard: <tspan font-weight="700">0.7016</tspan> across 902 common occupations</text>
+  <text x="78" y="235" fill="#0F172A" font-size="14">Occupation median: <tspan font-weight="700">0.6923</tspan> · Q10–Q90: <tspan font-weight="700">0.4286–0.8517</tspan></text>
+  <text x="78" y="264" fill="#0F172A" font-size="14">Category-name sensitivity: <tspan font-weight="700">0.8169</tspan> · broader categories persist more strongly</text>
+  <text x="78" y="293" fill="#0F172A" font-size="14">902 matched occupation titles: <tspan font-weight="700">0 title changes</tspan></text>
+
+  <rect x="50" y="338" width="1100" height="128" rx="18" fill="#EFF6FF" stroke="#60A5FA" stroke-width="2"/>
+  <text x="78" y="374" fill="#1D4ED8" font-size="18" font-weight="700">DEFENSIBLE L&amp;D INTERPRETATION</text>
+  <text x="78" y="409" fill="#0F172A" font-size="14">Use the signal to prioritize where technology requirements appear more stable versus more renewal-heavy.</text>
+  <text x="78" y="438" fill="#0F172A" font-size="14">Use exact-name and category-level results together when discussing reskilling, curriculum refresh, and workforce planning.</text>
+
+  <rect x="50" y="495" width="1100" height="128" rx="18" fill="#FFF7ED" stroke="#FB923C" stroke-width="2"/>
+  <text x="78" y="531" fill="#C2410C" font-size="18" font-weight="700">NOT ESTIMATED</text>
+  <text x="78" y="566" fill="#7C2D12" font-size="14">No causal rate of human skill depreciation · no worker performance loss · no training effectiveness estimate</text>
+  <text x="78" y="595" fill="#7C2D12" font-size="14">Observed turnover can also reflect taxonomy maintenance, content updates, vendor naming, or database revisions.</text>
 </g>
 </svg>
