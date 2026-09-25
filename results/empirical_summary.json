@@ -44,7 +44,7 @@
     "occupation_category_jaccard_mean": 0.8179,
     "occupation_category_jaccard_median": 0.8481
   },
-  "finding": "The release reports two distinct pair-set comparisons: an all-release Jaccard across every occupation-software pair present in each snapshot, and a common-code Jaccard restricted to the 902 occupations represented in both files. Occupation-level heterogeneity is evaluated only within those 902 common codes. A category-level sensitivity analysis tests whether the renewal signal persists when software names are collapsed to O*NET category/Element IDs.",
+  "finding": "The release reports two distinct pair-set comparisons: an all-release Jaccard across every occupation-software pair present in each snapshot, and a common-code Jaccard restricted to the 902 occupations represented in both files. Occupation-level heterogeneity is evaluated only within those 902 common codes. A category-level sensitivity analysis tests whether the renewal signal persists when software names are collapsed to normalized O*NET category names.",
   "source": "O*NET Database 25.1 and 31.0, Technology Skills / Software Skills",
   "retrieved": "2026-09-25"
 }
